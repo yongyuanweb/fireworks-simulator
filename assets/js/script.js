@@ -116,7 +116,7 @@ const store = {
 	state: {
 		// will be unpaused in init()
 		paused: true,
-		soundEnabled: false,
+		soundEnabled: true,
 		menuOpen: false,
 		openHelpTopic: null,
 		fullscreen: isFullscreen(),
@@ -1646,7 +1646,7 @@ function crackleEffect(star) {
 			angle,
 			// apply near cubic falloff to speed (places more particles towards outside)
 			Math.pow(Math.random(), 0.45) * 2.4,
-			300 + Math.random() * 200
+			300 + Math.random() * 400
 		);
 	});
 }
@@ -1681,7 +1681,7 @@ class Shell {
 		if (!this.starCount) {
 			const density = options.starDensity || 1;
 			const scaledSize = this.spreadSize / 54;
-			this.starCount = Math.max(6, scaledSize * scaledSize * density);
+			this.starCount = Math.max(12, scaledSize * scaledSize * density);
 		}
 	}
 	
